@@ -9,7 +9,7 @@ function getIP(json) {
     return fetch(url).then(res => res.json());
     }
     
-    let apiKey = '16986c20c9c8e22e62d5d0e5d888552507b4b4469432ca24d1970188';
+    let apiKey = 'YOUR API FROM IPDATA';
     json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
 
      var request = new XMLHttpRequest();
